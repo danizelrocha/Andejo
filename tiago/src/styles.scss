@@ -16,8 +16,8 @@
 
 :root {
   --primary: #1976d2;
-  --body: #dadada;;
-  --text-menu: #dadada;;
+  --body: #dadada;
+  --text-menu: #dadada;
   --text-body: #2f2d2d;
 }
 
@@ -26,4 +26,8 @@
   --body: #2f2d2d;
   --text-menu: #dadada;
   --text-body: #dadada;
+}
+
+body {
+  background-color: var(--body);
 }
