@@ -1,7 +1,7 @@
-import { DestaquesComponent } from './pages/destaques/destaques.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { DestaquesComponent } from './pages/destaques/destaques.component';
 import { GaleriaComponent } from './pages/galeria/galeria.component';
 
 const routes: Routes = [
