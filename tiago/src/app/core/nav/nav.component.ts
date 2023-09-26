@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 //Enums
 import { ETheme } from '../enums/ETheme.enums';
-
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -11,6 +9,7 @@ import { ETheme } from '../enums/ETheme.enums';
 export class NavComponent implements OnInit {
   public icon: string = ETheme.ICON_MOON;
   public textTheme: string = ETheme.TEXT_MOON;
+destaques: any|string;
 
   constructor() { }
 
