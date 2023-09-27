@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,  } from '@angular/core';
 
 @Component({
   selector: 'app-galeria',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./galeria.component.scss']
 })
 export class GaleriaComponent {
-
+  imageUrls: string[] = [
+    '~/../assets/image/desenhos/1.jpg',
+    '~/../assets/image/desenhos/2.jpg',
+    '~/../assets/image/desenhos/3.jpg',
+    '~/../assets/image/desenhos/5.jpg',
+    '~/../assets/image/desenhos/6.jpg',
+    '~/../assets/image/desenhos/7.jpg',
+    '~/../assets/image/desenhos/8.jpg',
+    '~/../assets/image/desenhos/9.jpg',
+    '~/../assets/image/desenhos/10.jpg',
+  ];
 }
