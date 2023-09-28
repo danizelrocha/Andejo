@@ -8,9 +8,9 @@ import { Component, OnInit,  } from '@angular/core';
 export class GaleriaComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
-  }
+
   imageUrls: string[] = [
     '~/../assets/image/desenhos/1.jpg',
     '~/../assets/image/desenhos/2.jpg',
