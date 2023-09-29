@@ -30,6 +30,10 @@
   --text-body: #dadada; //
 }
 
+:root .gallery-item {
+  margin: 4rem 0 0 0;
+}
+
 body {
   background-color: var(--body);
 }

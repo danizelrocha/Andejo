@@ -7,11 +7,9 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { NavComponent } from './core/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
-import { GaleriaComponent } from './pages/galeria/galeria.component';
-import { DestaquesComponent } from './pages/destaques/destaques.component';
-import { VersoesComponent } from './pages/versoes/versoes.component';
-import { AutoralComponent } from './pages/autoral/autoral.component';
-import { RascunhoComponent } from './pages/rascunho/rascunho.component';
+
+import { GalleryComponent } from './shared/components/gallery/gallery.component';
+import { ArtsComponent } from './pages/arts/arts.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +17,8 @@ import { RascunhoComponent } from './pages/rascunho/rascunho.component';
     FooterComponent,
     NavComponent,
     HomeComponent,
-    GaleriaComponent,
-    DestaquesComponent,
-    VersoesComponent,
-    AutoralComponent,
-    RascunhoComponent
+    GalleryComponent,
+    ArtsComponent
   ],
   imports: [
     BrowserModule,

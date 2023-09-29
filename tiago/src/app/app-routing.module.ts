@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
-import { DestaquesComponent } from './pages/destaques/destaques.component';
-import { GaleriaComponent } from './pages/galeria/galeria.component';
-import { AutoralComponent } from './pages/autoral/autoral.component';
-import { RascunhoComponent } from './pages/rascunho/rascunho.component';
-import { VersoesComponent } from './pages/versoes/versoes.component';
+
+import { ArtsComponent } from './pages/arts/arts.component';
 
 const routes: Routes = [
 
@@ -18,24 +15,25 @@ const routes: Routes = [
   },
 
   {
-    path:'destaques', component: DestaquesComponent
+    path:'destaques', component: ArtsComponent
   },
 
   {
-    path:'galeria', component: GaleriaComponent
+    path:'galeria', component: ArtsComponent
   },
 
   {
-    path:'autoral', component: AutoralComponent
+    path:'autoral', component: ArtsComponent
   },
 
   {
-    path:'rascunho', component: RascunhoComponent
+    path:'rascunho', component: ArtsComponent
   },
 
   {
-    path:'versoes', component: VersoesComponent
+    path:'versoes', component: ArtsComponent
   },
+
 
 ];
 
