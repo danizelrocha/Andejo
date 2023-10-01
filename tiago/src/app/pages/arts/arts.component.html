@@ -1,1 +1,9 @@
-<!-- <app-gallery imageUrls="{{imageUrls}}"></app-gallery> -->
+<div class="gallery-item">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let item of galeria ">
+        <img class="img-fluid" [src]="item.Url" alt="Imagem" />
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,7 @@ import { ETheme } from '../enums/ETheme.enums';
 export class NavComponent implements OnInit {
   public icon: string = ETheme.ICON_MOON;
   public textTheme: string = ETheme.TEXT_MOON;
-destaques: any|string;
+  destaques: any|string;
 
   constructor() { }
 
