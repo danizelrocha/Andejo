@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Arts } from 'src/app/core/enums/Arts.enums';
+import { Arts } from './../../core/enums/Arts.enums';
 import { ArtsService } from 'src/app/shared/components/service/arts.service';
 
 @Component({
@@ -7,66 +7,39 @@ import { ArtsService } from 'src/app/shared/components/service/arts.service';
   templateUrl: './arts.component.html',
   styleUrls: ['./arts.component.scss']
 })
-export class ArtsComponent implements OnInit{
-  galeria: any
-/*rascunho: any
-  versoes: any
-  autorais: any
-  destaques: any */
+export class ArtsComponent implements OnInit {
+  categoriaSelecionada: Arts | null = null;
+  imagens: string[] = [];
+  imagensPorCategoria: Record<Arts, string[]> = {
+    [Arts.Destaques]: [],
+    [Arts.Galeria]: [],
+    [Arts.Versoes]: [],
+    [Arts.Autorais]: [],
+    [Arts.Rascunhos]: [],
+  };
 
-
-/* Galeria = Arts[1];
-   Autorais = Arts[2];
-   Rascunhos = Arts [3];
-   Versoes = Arts[4];
-   Destaques = Arts[5]
-
-
-   gaNumber: string = Arts[galeria]; // 1
-   gafromString = Arts["Monday"]; // 1 */
-
-
-  constructor (private service: ArtsService) {}
+  constructor(private artsService: ArtsService) {}
 
   ngOnInit(): void {
-   this.getGaleria()
-/* this.getRascunho()
-   this.getVersoes()
-   this.getAutorais()
-   this.getDestaques() */
+    // Carregue todas as imagens ao iniciar
+    this.carregarImagensPorCategoria(Arts.Galeria);
   }
 
-  getGaleria(){
-    this.service.getListGaleria().subscribe((resposta) =>{
-      this.galeria = resposta
-      console.log("qualquer coisa", resposta)
-    })
+  selecionarCategoria(categoria: Arts) {
+    this.categoriaSelecionada = categoria;
+    if (this.imagensPorCategoria[categoria].length === 0) {
+      // Carregue as imagens apenas se ainda não estiverem carregadas
+      this.carregarImagensPorCategoria(categoria);
+    }
   }
 
-
-
-/* getRascunho(){
-    this.service.getListRascunho().subscribe((resposta) =>{
-      this.rascunho = resposta
-    })
+  carregarImagensPorCategoria(categoria: Arts) {
+    this.artsService.getListPorCategoria(categoria).subscribe((resposta: string[]) => {
+      this.imagensPorCategoria[categoria] = resposta;
+      this.imagens = this.imagensPorCategoria[categoria];
+      console.log('Imagens carregadas com sucesso:', this.imagens);
+    }, (error) => {
+      console.error('Erro ao carregar imagens:', error);
+    });
   }
-
-  getVersoes(){
-    this.service.getListVersoes().subscribe((resposta) =>{
-      this.versoes = resposta
-    })
-  }
-
-  getAutorais(){
-    this.service.getListAutorais().subscribe((resposta) =>{
-      this.autorais = resposta
-    })
-  }
-
-  getDestaques(){
-    this.service.getListDestaques().subscribe((resposta) =>{
-      this.destaques = resposta
-    })
-  } */
-
 }

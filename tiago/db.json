@@ -1,75 +1,72 @@
- {
-
+{
+  "Destaques": [
+    {
+      "Url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
+      "Categoria": "Destaques"
+    },
+    {
+      "Url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
+      "Categoria": "Destaques"
+    },
+    {
+      "Url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
+      "Categoria": "Destaques"
+    }
+  ],
   "Galeria": [
-
     {
-     "Url":"https://t.ctcdn.com.br/HfaAfdSP0yElfXWQelkeEQvkgyU=/1000x563/smart/i257652.jpeg"
+      "Url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
+      "Categoria": "Galeria"
     },
-
     {
-     "Url":"https://t.ctcdn.com.br/HfaAfdSP0yElfXWQelkeEQvkgyU=/1000x563/smart/i257652.jpeg"
+      "Url": "https://t.ctcdn.com.br/HfaAfdSP0yElfXWQelkeEQvkgyU=/1000x563/smart/i257652.jpeg",
+      "Categoria": "Galeria"
     },
-
     {
-     "Url":"https://t.ctcdn.com.br/HfaAfdSP0yElfXWQelkeEQvkgyU=/1000x563/smart/i257652.jpeg"
-    }
-
-  ],
-
- "Rascunho":[
-    {
-     "Url":"https://ogimg.infoglobo.com.br/in/24734401-b0f-624/FT1086A/MAIN.jpg"
-    },
-
-    {
-     "Url":"https://ogimg.infoglobo.com.br/in/24734401-b0f-624/FT1086A/MAIN.jpg"
-    },
-
-    {
-      "Url":"https://ogimg.infoglobo.com.br/in/24734401-b0f-624/FT1086A/MAIN.jpg"
+      "Url": "https://t.ctcdn.com.br/HfaAfdSP0yElfXWQelkeEQvkgyU=/1000x563/smart/i257652.jpeg",
+      "Categoria": "Galeria"
     }
   ],
-
- "Versoes":[
+  "Versoes": [
     {
-     "Url":"https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80.jpg.webp"
+      "Url": "https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80.jpg.webp",
+      "Categoria": "Versoes"
     },
-
     {
-     "Url":"https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80.jpg.webp"
+      "Url": "https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80.jpg.webp",
+      "Categoria": "Versoes"
     },
-
     {
-     "Url":"https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80.jpg.webp"
+      "Url": "https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80.jpg.webp",
+      "Categoria": "Versoes"
     }
   ],
-
- "Autorais":[
+  "Autorais": [
     {
-     "Url":"https://scontent.fssz2-1.fna.fbcdn.net/v/t1.6435-9/130787571_220298269466653_3804401160185387305_n.jpg?stp=dst-jpg_p526x395&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hrx6mfD5G1cAX9LmlJA&_nc_ht=scontent.fssz2-1.fna&oh=00_AfDwtwW4ZvDgRfyvO1gf1XPPxa_uyJfsX2LJ5IM4Ym2R6g&oe=654117F5"
+      "Url": "https://scontent.fssz2-1.fna.fbcdn.net/v/t1.6435-9/130787571_220298269466653_3804401160185387305_n.jpg?stp=dst-jpg_p526x395&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hrx6mfD5G1cAX9LmlJA&_nc_ht=scontent.fssz2-1.fna&oh=00_AfDwtwW4ZvDgRfyvO1gf1XPPxa_uyJfsX2LJ5IM4Ym2R6g&oe=654117F5",
+      "Categoria": "Autorais"
     },
-
     {
-     "Url":"https://scontent.fssz2-1.fna.fbcdn.net/v/t1.6435-9/130787571_220298269466653_3804401160185387305_n.jpg?stp=dst-jpg_p526x395&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hrx6mfD5G1cAX9LmlJA&_nc_ht=scontent.fssz2-1.fna&oh=00_AfDwtwW4ZvDgRfyvO1gf1XPPxa_uyJfsX2LJ5IM4Ym2R6g&oe=654117F5"
+      "Url": "https://scontent.fssz2-1.fna.fbcdn.net/v/t1.6435-9/130787571_220298269466653_3804401160185387305_n.jpg?stp=dst-jpg_p526x395&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hrx6mfD5G1cAX9LmlJA&_nc_ht=scontent.fssz2-1.fna&oh=00_AfDwtwW4ZvDgRfyvO1gf1XPPxa_uyJfsX2LJ5IM4Ym2R6g&oe=654117F5",
+      "Categoria": "Autorais"
     },
-
     {
-     "Url":"https://scontent.fssz2-1.fna.fbcdn.net/v/t1.6435-9/130787571_220298269466653_3804401160185387305_n.jpg?stp=dst-jpg_p526x395&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hrx6mfD5G1cAX9LmlJA&_nc_ht=scontent.fssz2-1.fna&oh=00_AfDwtwW4ZvDgRfyvO1gf1XPPxa_uyJfsX2LJ5IM4Ym2R6g&oe=654117F5"
+      "Url": "https://scontent.fssz2-1.fna.fbcdn.net/v/t1.6435-9/130787571_220298269466653_3804401160185387305_n.jpg?stp=dst-jpg_p526x395&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hrx6mfD5G1cAX9LmlJA&_nc_ht=scontent.fssz2-1.fna&oh=00_AfDwtwW4ZvDgRfyvO1gf1XPPxa_uyJfsX2LJ5IM4Ym2R6g&oe=654117F5",
+      "Categoria": "Autorais"
     }
   ],
-
-  "Destaques":[
-
+  "Rascunho": [
     {
-     "Url":"https://criticalhits.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/06/akira-my-hero-740x402.jpg.webp"
+      "Url": "https://ogimg.infoglobo.com.br/in/24734401-b0f-624/FT1086A/MAIN.jpg",
+      "Categoria": "Rascunho"
     },
-
     {
-     "Url":"https://criticalhits.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/06/akira-my-hero-740x402.jpg.webp"
+      "Url": "https://ogimg.infoglobo.com.br/in/24734401-b0f-624/FT1086A/MAIN.jpg",
+      "Categoria": "Rascunho"
     },
-
     {
-     "Url":"https://criticalhits.com.br/wp-content/webp-express/webp-images/doc-root/wp-content/uploads/2019/06/akira-my-hero-740x402.jpg.webp"
+      "Url": "https://ogimg.infoglobo.com.br/in/24734401-b0f-624/FT1086A/MAIN.jpg",
+      "Categoria": "Rascunho"
     }
   ]
 }

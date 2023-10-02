@@ -18,23 +18,6 @@ const routes: Routes = [
     path:'destaques', component: ArtsComponent
   },
 
-  {
-    path:'galeria', component: ArtsComponent
-  },
-
-  {
-    path:'autoral', component: ArtsComponent
-  },
-
-  {
-    path:'rascunho', component: ArtsComponent
-  },
-
-  {
-    path:'versoes', component: ArtsComponent
-  },
-
-
 ];
 
 @NgModule({

@@ -16,24 +16,23 @@
             <a class="nav-link" [routerLink]="['']">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['destaques']">Destaques</a>
+            <a class="nav-link"(click)="carregarDestaques(artsEnum.Destaques)">Destaques</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['galeria']">Galeria</a>
+            <a class="nav-link"(click)="carregarDestaques(artsEnum.Galeria)">Galeria</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['versoes']">Versões</a>
+            <a class="nav-link"(click)="carregarDestaques(artsEnum.Versoes)">Versões</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['autoral']">Autorais</a>
+            <a class="nav-link"(click)="carregarDestaques(artsEnum.Autorais)">Autorais</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['rascunho']">Rascunhos</a>
+            <a class="nav-link"(click)="carregarDestaques(artsEnum.Rascunhos)">Rascunhos</a>
           </li>
         </div>
       </ul>
-      <!-- <i class="bi bi-moon-fill"></i>
-            <i class="bi bi-sun-fill"></i> -->
+
       <form class="d-flex" role="search">
         <button type="button" (click)="toggle()">
           <img
@@ -45,3 +44,7 @@
     </div>
   </div>
 </nav>
+
+
+
+

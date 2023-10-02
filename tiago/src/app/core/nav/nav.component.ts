@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-//Enums
+
+//Tema
 import { ETheme } from '../enums/ETheme.enums';
+
+//imagens
+import { ArtsService } from 'src/app/shared/components/service/arts.service';
+import { Arts } from '../enums/Arts.enums';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -9,11 +15,14 @@ import { ETheme } from '../enums/ETheme.enums';
 export class NavComponent implements OnInit {
   public icon: string = ETheme.ICON_MOON;
   public textTheme: string = ETheme.TEXT_MOON;
-  destaques: any|string;
+  destaques: any | string;
+  artsEnum = Arts;
 
-  constructor() { }
+  constructor(private artsService: ArtsService) { }
 
   ngOnInit(): void {
+    // Inicialize os destaques aqui com a categoria padrão (por exemplo, Galeria)
+    this.carregarDestaques(Arts.Galeria);
   }
 
   public toggle() {
@@ -26,5 +35,15 @@ export class NavComponent implements OnInit {
 
     this.textTheme = ETheme.TEXT_MOON;
     return (this.icon = ETheme.ICON_MOON);
+  }
+
+  // Função para carregar destaques com base na categoria selecionada
+  public carregarDestaques(categoria: Arts) {
+    this.artsService.getListPorCategoria(categoria).subscribe((destaques) => {
+      this.destaques = destaques;
+      console.log('Destaques carregados com sucesso:', this.destaques);
+    }, (error) => {
+      console.error('Erro ao carregar destaques:', error);
+    });
   }
 }

@@ -1,36 +1,38 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs';
+import { Arts } from 'src/app/core/enums/Arts.enums';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArtsService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getListGaleria(){
-    let galeria = this.http. get('http://localhost:3000/Galeria')
-    return galeria;
+  getListPorCategoria(categoria: Arts): Observable<any[]> {
+    let baseUrl = 'http://localhost:3000/';
+
+    let url: string;
+
+    switch (categoria) {
+      case Arts.Galeria:
+        url = `${baseUrl}Galeria`;
+        break;
+      case Arts.Rascunhos:
+        url = `${baseUrl}Rascunho`;
+        break;
+      case Arts.Versoes:
+        url = `${baseUrl}Versoes`;
+        break;
+      case Arts.Autorais:
+        url = `${baseUrl}Autorais`;
+        break;
+      case Arts.Destaques:
+        url = `${baseUrl}Destaques`;
+        break;
+    }
+    return this.http.get<any[]>(url);
   }
 
-  getListRascunho(){
-    let rascunho = this.http. get('http://localhost:3000/Rascunho')
-    return rascunho;
-  }
-
-  getListVersoes(){
-    let versoes = this.http. get('http://localhost:3000/Versoes')
-    return versoes;
-  }
-
-  getListAutorais(){
-    let autorais = this.http. get('http://localhost:3000/Autorais')
-    return autorais;
-  }
-
-  getListDestaques(){
-    let destaques = this.http. get('http://localhost:3000/Destaques')
-    return destaques;
-  }
 }

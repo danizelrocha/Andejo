@@ -1,14 +1,14 @@
- * {
+/*  * {
   padding: 0;
-}
+} */
 
 .container-fluid {
   background: linear-gradient(#3d3939, #5f5858);
-/*   padding: 5px;
+  padding: 4px;
   text-align: center;
   position: fixed;
   top: 0;
-  width: 100%;   */
+  width: 100%;
 
 }
 
@@ -18,7 +18,8 @@
 
 .nav-link{
   color: white;
- /*  word-spacing: 1rem; */
+  cursor: pointer;
+
 }
 
 .navbar-brand{
