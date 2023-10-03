@@ -39,7 +39,7 @@ export class ArtsComponent implements OnInit {
       this.imagens = this.imagensPorCategoria[categoria];
       console.log('Imagens carregadas com sucesso:', this.imagens);
     }, (error) => {
-      console.error('Erro ao carregar imagens:', error);
+     // console.error('Erro ao carregar imagens:', error);
     });
   }
 }

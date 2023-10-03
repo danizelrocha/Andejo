@@ -15,7 +15,7 @@ const routes: Routes = [
   },
 
   {
-    path:'destaques', component: ArtsComponent
+    path:'arts', component: ArtsComponent
   },
 
 ];

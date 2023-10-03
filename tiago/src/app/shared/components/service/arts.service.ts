@@ -16,11 +16,11 @@ export class ArtsService {
     let url: string;
 
     switch (categoria) {
+      case Arts.Destaques:
+        url = `${baseUrl}Destaques`;
+        break;
       case Arts.Galeria:
         url = `${baseUrl}Galeria`;
-        break;
-      case Arts.Rascunhos:
-        url = `${baseUrl}Rascunho`;
         break;
       case Arts.Versoes:
         url = `${baseUrl}Versoes`;
@@ -28,8 +28,8 @@ export class ArtsService {
       case Arts.Autorais:
         url = `${baseUrl}Autorais`;
         break;
-      case Arts.Destaques:
-        url = `${baseUrl}Destaques`;
+      case Arts.Rascunhos:
+        url = `${baseUrl}Rascunho`;
         break;
     }
     return this.http.get<any[]>(url);

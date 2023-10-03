@@ -6,13 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit{
-galeria: any;
-
+  @Input() imagens: any;
   constructor() {}
 
   ngOnInit(): void {
 
-     console.log('galeria', this.galeria);
+     console.log('galeria', this.imagens);
 
     //this.imageUrls2 = this.imageUrls.split(","); //  gambeta de alta qualidade */
 

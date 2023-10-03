@@ -41,9 +41,9 @@ export class NavComponent implements OnInit {
   public carregarDestaques(categoria: Arts) {
     this.artsService.getListPorCategoria(categoria).subscribe((destaques) => {
       this.destaques = destaques;
-      console.log('Destaques carregados com sucesso:', this.destaques);
+     // console.log('Destaques carregados com sucesso:', this.destaques);
     }, (error) => {
-      console.error('Erro ao carregar destaques:', error);
+      //console.error('Erro ao carregar destaques:', error);
     });
   }
 }
