@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Arts } from './../../core/enums/Arts.enums';
 import { ArtsService } from 'src/app/shared/components/service/arts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-arts',
@@ -18,12 +19,17 @@ export class ArtsComponent implements OnInit {
     [Arts.Rascunhos]: [],
   };
 
-  constructor(private artsService: ArtsService) {}
+  constructor(
+    private artsService: ArtsService,
+    private router: Router
+    ) {}
 
   ngOnInit(): void {
     // Carregue todas as imagens ao iniciar
     this.carregarImagensPorCategoria(Arts.Galeria);
   }
+
+
 
   selecionarCategoria(categoria: Arts) {
     this.categoriaSelecionada = categoria;

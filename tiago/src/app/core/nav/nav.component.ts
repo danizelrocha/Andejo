@@ -6,6 +6,7 @@ import { ETheme } from '../enums/ETheme.enums';
 //imagens
 import { ArtsService } from 'src/app/shared/components/service/arts.service';
 import { Arts } from '../enums/Arts.enums';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -18,7 +19,9 @@ export class NavComponent implements OnInit {
   destaques: any | string;
   artsEnum = Arts;
 
-  constructor(private artsService: ArtsService) { }
+  constructor(private artsService: ArtsService,
+    private router: Router,
+    private service: ArtsService) { }
 
   ngOnInit(): void {
     // Inicialize os destaques aqui com a categoria padrão (por exemplo, Galeria)
@@ -45,5 +48,11 @@ export class NavComponent implements OnInit {
     }, (error) => {
       //console.error('Erro ao carregar destaques:', error);
     });
+  }
+
+  chamarGaleria(){
+    this.router.navigate(
+      ['http://localhost:3000/galeria']
+    )
   }
 }
