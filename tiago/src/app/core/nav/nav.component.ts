@@ -50,9 +50,4 @@ export class NavComponent implements OnInit {
     });
   }
 
-  chamarGaleria(){
-    this.router.navigate(
-      ['http://localhost:3000/galeria']
-    )
-  }
 }

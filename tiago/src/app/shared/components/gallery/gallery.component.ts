@@ -17,7 +17,7 @@ export class GalleryComponent implements OnInit{
 
   }
 
- /*  @Input() imageUrls: any;
+ /*
 
   imageUrls2: string[] = []; */
 };

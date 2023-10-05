@@ -15,11 +15,8 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['']">Home</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" (click)="/arts/artsEnum.Destaques">Destaques</a>
-          </li> -->
           <li class="nav-item">
-            <a class="nav-link"(click)="carregarDestaques(artsEnum.Galeria)">Galeria</a>
+            <a class="nav-link" routerLink="/galeria">Galeria</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"(click)="carregarDestaques(artsEnum.Versoes)">Versões</a>
@@ -28,10 +25,7 @@
             <a class="nav-link"(click)="carregarDestaques(artsEnum.Autorais)">Autorais</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"(click)="carregarDestaques(artsEnum.Rascunhos)">Rascunhos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"(click)="chamarGaleria()">Teste safado</a>
+            <a class="nav-link" routerLink="/rascunhos">Rascunhos</a>
           </li>
         </div>
       </ul>

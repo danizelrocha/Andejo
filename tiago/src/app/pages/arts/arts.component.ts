@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Arts } from './../../core/enums/Arts.enums';
 import { ArtsService } from 'src/app/shared/components/service/arts.service';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-arts',
@@ -20,16 +20,13 @@ export class ArtsComponent implements OnInit {
   };
 
   constructor(
-    private artsService: ArtsService,
-    private router: Router
+    private artsService: ArtsService
     ) {}
 
   ngOnInit(): void {
     // Carregue todas as imagens ao iniciar
-    this.carregarImagensPorCategoria(Arts.Galeria);
+    this.carregarImagensPorCategoria(this.categoriaSelecionada || Arts.Galeria);
   }
-
-
 
   selecionarCategoria(categoria: Arts) {
     this.categoriaSelecionada = categoria;
@@ -48,4 +45,21 @@ export class ArtsComponent implements OnInit {
      // console.error('Erro ao carregar imagens:', error);
     });
   }
+
 }
+
+
+
+/* carregarImagensPorCategoria(categoria: Arts) {
+  this.artsService.getListPorCategoria(categoria).subscribe({
+    next: (resposta: string[]) => {
+      this.imagensPorCategoria[categoria] = resposta;
+      this.imagens = this.imagensPorCategoria[categoria];
+      console.log('Imagens carregadas com sucesso:', this.imagens);
+    },
+    error: (error) => {
+      // Lida com erros de carregamento de imagens
+      console.error('Erro ao carregar imagens:', error);
+    },
+  });
+} */

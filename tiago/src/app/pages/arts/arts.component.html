@@ -1,8 +1,10 @@
-<app-gallery  imagens="{{imagens}}">
+<!-- <app-gallery imagens="{{ imagens }}"> </app-gallery>
 
-</app-gallery>
+ -->
 
-
-
+ <h1>Testes das imagens</h1>
+ <div *ngFor="let image of imagens">
+   <img [src]="image" alt="Imagem">
+ </div>
 
 
