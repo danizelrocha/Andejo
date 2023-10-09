@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Arts } from './../../core/enums/Arts.enums';
 import { ArtsService } from 'src/app/shared/components/service/arts.service';
-
 
 @Component({
   selector: 'app-arts',
@@ -11,55 +11,43 @@ import { ArtsService } from 'src/app/shared/components/service/arts.service';
 export class ArtsComponent implements OnInit {
   categoriaSelecionada: Arts | null = null;
   imagens: string[] = [];
-  imagensPorCategoria: Record<Arts, string[]> = {
-    [Arts.Destaques]: [],
-    [Arts.Galeria]: [],
-    [Arts.Versoes]: [],
-    [Arts.Autorais]: [],
-    [Arts.Rascunhos]: [],
-  };
 
   constructor(
-    private artsService: ArtsService
-    ) {}
+    private artsService: ArtsService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    // Carregue todas as imagens ao iniciar
-    this.carregarImagensPorCategoria(this.categoriaSelecionada || Arts.Galeria);
-  }
+    // Inicialmente, verifica se a categoria está definida nos parâmetros da rota
+    this.route.data.subscribe(data => {
+      this.categoriaSelecionada = data['categoriaSelecionada'] || null;
 
-  selecionarCategoria(categoria: Arts) {
-    this.categoriaSelecionada = categoria;
-    if (this.imagensPorCategoria[categoria].length === 0) {
-      // Carregue as imagens apenas se ainda não estiverem carregadas
-      this.carregarImagensPorCategoria(categoria);
-    }
-  }
-
-  carregarImagensPorCategoria(categoria: Arts) {
-    this.artsService.getListPorCategoria(categoria).subscribe((resposta: string[]) => {
-      this.imagensPorCategoria[categoria] = resposta;
-      this.imagens = this.imagensPorCategoria[categoria];
-      console.log('Imagens carregadas com sucesso:', this.imagens);
-    }, (error) => {
-     // console.error('Erro ao carregar imagens:', error);
+      if (this.categoriaSelecionada) {
+        this.carregarImagensPorCategoria(this.categoriaSelecionada);
+      }
     });
   }
 
+  selecionarCategoria(categoria: Arts) {
+    // Atualiza a URL com a nova categoria
+    const categoriaString = Arts[categoria].toLowerCase();
+    this.router.navigate(['/arts', categoriaString]);
+
+    // Atualiza a categoria selecionada
+    this.categoriaSelecionada = categoria;
+    this.carregarImagensPorCategoria(categoria);
+  }
+
+  private carregarImagensPorCategoria(categoria: Arts) {
+    this.artsService.getListPorCategoria(categoria).subscribe({
+      next: (resposta: string[]) => {
+        this.imagens = resposta;
+        console.log('Imagens carregadas com sucesso:', categoria, ';', this.imagens);
+      },
+      error: (error) => {
+        console.error('Erro ao carregar imagens:', categoria, ';', error);
+      },
+    });
+  }
 }
-
-
-
-/* carregarImagensPorCategoria(categoria: Arts) {
-  this.artsService.getListPorCategoria(categoria).subscribe({
-    next: (resposta: string[]) => {
-      this.imagensPorCategoria[categoria] = resposta;
-      this.imagens = this.imagensPorCategoria[categoria];
-      console.log('Imagens carregadas com sucesso:', this.imagens);
-    },
-    error: (error) => {
-      // Lida com erros de carregamento de imagens
-      console.error('Erro ao carregar imagens:', error);
-    },
-  });
-} */

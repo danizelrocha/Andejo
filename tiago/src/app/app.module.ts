@@ -8,17 +8,16 @@ import { FooterComponent } from './core/footer/footer.component';
 import { NavComponent } from './core/nav/nav.component';
 import { HomeComponent } from './pages/home/home.component';
 
-import { GalleryComponent } from './shared/components/gallery/gallery.component';
-import { ArtsComponent } from './pages/arts/arts.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     NavComponent,
-    HomeComponent,
-    GalleryComponent,
-    ArtsComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

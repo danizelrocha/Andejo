@@ -6,28 +6,29 @@
         style="--bs-scroll-height: 100px"
       >
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['']">ANDEJO</a>
+          <a class="nav-link" [routerLink]="['/home']">ANDEJO</a>
         </li>
         <li class="nav-item">
-          <i class="bi bi-globe-americas" style="color:white"></i>
+          <i class="bi bi-globe-americas" style="color: white"></i>
         </li>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="['']">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/galeria">Galeria</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"(click)="carregarDestaques(artsEnum.Versoes)">Versões</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"(click)="carregarDestaques(artsEnum.Autorais)">Autorais</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/rascunhos">Rascunhos</a>
-          </li>
-        </div>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/home']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/arts/destaques']">Destaques</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/arts/galeria']">Galeria</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/arts/versoes']">Versões</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/arts/autorais']">Autorais</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/arts/rascunhos']">Rascunhos</a>
+        </li>
       </ul>
 
       <form class="d-flex" role="search">
@@ -41,7 +42,3 @@
     </div>
   </div>
 </nav>
-
-
-
-

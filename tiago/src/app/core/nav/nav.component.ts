@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-//Tema
 import { ETheme } from '../enums/ETheme.enums';
-
-//imagens
 import { ArtsService } from 'src/app/shared/components/service/arts.service';
 import { Arts } from '../enums/Arts.enums';
 import { Router } from '@angular/router';
@@ -11,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.scss']
+  styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
   public icon: string = ETheme.ICON_MOON;
@@ -19,13 +15,13 @@ export class NavComponent implements OnInit {
   destaques: any | string;
   artsEnum = Arts;
 
-  constructor(private artsService: ArtsService,
-    private router: Router,
-    private service: ArtsService) { }
+  constructor(
+    private artsService: ArtsService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    // Inicialize os destaques aqui com a categoria padrão (por exemplo, Galeria)
-    this.carregarDestaques(Arts.Galeria);
+    // Não carrega automaticamente nenhuma categoria ao inicializar
   }
 
   public toggle() {
@@ -42,12 +38,20 @@ export class NavComponent implements OnInit {
 
   // Função para carregar destaques com base na categoria selecionada
   public carregarDestaques(categoria: Arts) {
-    this.artsService.getListPorCategoria(categoria).subscribe((destaques) => {
-      this.destaques = destaques;
-     // console.log('Destaques carregados com sucesso:', this.destaques);
-    }, (error) => {
-      //console.error('Erro ao carregar destaques:', error);
+    this.artsService.getListPorCategoria(categoria).subscribe({
+      next: (destaques) => {
+        this.destaques = destaques;
+        console.log('Destaques carregados com sucesso:', categoria, this.destaques);
+      },
+      error: (error) => {
+        console.error('Erro ao carregar destaques:', error);
+      },
     });
   }
 
+  // Função para navegar para uma categoria específica
+  public navigateToCategoria(categoria: Arts) {
+    const categoriaString = Arts[categoria].toLowerCase();
+    this.router.navigate([categoriaString]);
+  }
 }
