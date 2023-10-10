@@ -10,39 +10,15 @@ const routes: Routes = [
     path: 'arts/:categoria',
     component: ArtsComponent,
     children: [
-      {
-        path: '',
-        redirectTo: 'gallery',
-        pathMatch: 'full'
-      },
-      {
-        path: 'gallery',
-        component: GalleryComponent,
-        data: { categoriaSelecionada: Arts.Galeria }
-      },
-      {
-        path: 'destaques',
-        component: GalleryComponent,
-        data: { categoriaSelecionada: Arts.Destaques }
-      },
-      {
-        path: 'versoes',
-        component: GalleryComponent,
-        data: { categoriaSelecionada: Arts.Versoes }
-      },
-      {
-        path: 'autorais',
-        component: GalleryComponent,
-        data: { categoriaSelecionada: Arts.Autorais }
-      },
-      {
-        path: 'rascunho',
-        component: GalleryComponent,
-        data: { categoriaSelecionada: Arts.Rascunhos }
-      }
+      { path: 'destaques', component: GalleryComponent, data: { categoriaSelecionada: Arts.Destaques } },
+      { path: 'galeria', component: GalleryComponent, data: { categoriaSelecionada: Arts.Galeria } },
+      { path: 'versoes', component: GalleryComponent, data: { categoriaSelecionada: Arts.Versoes } },
+      { path: 'autorais', component: GalleryComponent, data: { categoriaSelecionada: Arts.Autorais } },
+      { path: 'rascunho', component: GalleryComponent, data: { categoriaSelecionada: Arts.Rascunhos } }
     ]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
