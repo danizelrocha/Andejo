@@ -35,7 +35,6 @@ export class NavComponent implements OnInit {
     this.textTheme = ETheme.TEXT_MOON;
     return (this.icon = ETheme.ICON_MOON);
   }
-
   // Função para carregar destaques com base na categoria selecionada
   public carregarDestaques(categoria: Arts) {
     this.artsService.getListPorCategoria(categoria).subscribe({
