@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Arts } from './../../core/enums/Arts.enums';
 import { ArtsService } from 'src/app/shared/components/service/arts.service';
+import { QueryParamService } from 'src/app/shared/components/service/query-param.service.ts.service';
 
 @Component({
   selector: 'app-arts',
@@ -15,13 +16,14 @@ export class ArtsComponent implements OnInit {
   constructor(
     private artsService: ArtsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private queryParamsService: QueryParamService
   ) { }
 
   ngOnInit(): void {
-    // Inicialmente, verifica se a categoria está definida nos parâmetros da rota
-    this.route.data.subscribe(data => {
+    this.route.data.subscribe((data) => {
       this.categoriaSelecionada = data['categoriaSelecionada'] || null;
+      const queryParams = this.queryParamsService.queryParams$; // Acesse os queryParams do serviço
 
       if (this.categoriaSelecionada) {
         this.carregarImagensPorCategoria(this.categoriaSelecionada);
