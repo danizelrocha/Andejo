@@ -32,10 +32,10 @@
       </ul>
 
       <form class="d-flex" role="search">
-        <button type="button" (click)="toggle()">
+        <button type="button" (click)="toggle()" [ngClass]="{ 'dark-theme': isDarkTheme }" title="Clique para alternar o tema">
           <img
-            src="~/../assets/image/darkLigth/{{ icon }}.svg"
-            alt="Click e troque {{ textTheme }}"
+            [src]="'~/../assets/image/darkLigth/' + icon + '.svg'"
+            alt="Clique e troque {{ textTheme }}"
           />
         </button>
       </form>

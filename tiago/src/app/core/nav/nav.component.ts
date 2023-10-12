@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class NavComponent implements OnInit {
   public icon: string = ETheme.ICON_MOON;
   public textTheme: string = ETheme.TEXT_MOON;
+  public isDarkTheme = false; // Variável para controlar o tema
+
   destaques: any | string;
   artsEnum = Arts;
 
@@ -25,16 +27,11 @@ export class NavComponent implements OnInit {
   }
 
   public toggle() {
-    const theme = document.body.classList.toggle('dark-theme');
-
-    if (theme) {
-      this.textTheme = ETheme.TEXT_SUN;
-      return (this.icon = ETheme.ICON_SUN);
-    }
-
-    this.textTheme = ETheme.TEXT_MOON;
-    return (this.icon = ETheme.ICON_MOON);
+    this.isDarkTheme = !this.isDarkTheme; // Alternar o tema
+    this.icon = this.isDarkTheme ? ETheme.ICON_SUN : ETheme.ICON_MOON;
+    this.textTheme = this.isDarkTheme ? ETheme.TEXT_SUN : ETheme.TEXT_MOON;
   }
+
   // Função para carregar destaques com base na categoria selecionada
   public carregarDestaques(categoria: Arts) {
     this.artsService.getListPorCategoria(categoria).subscribe({

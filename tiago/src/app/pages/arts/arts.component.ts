@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Arts } from './../../core/enums/Arts.enums';
 import { ArtsService } from 'src/app/shared/components/service/arts.service';
-import { QueryParamService } from 'src/app/shared/components/service/query-param.service.ts.service';
+import { QueryParamService } from 'src/app/shared/components/service/query-param.service';
+import { ErrorMessageService } from 'src/app/shared/components/service/erro-message.service';
 
 @Component({
   selector: 'app-arts',
   templateUrl: './arts.component.html',
-  styleUrls: ['./arts.component.scss']
+  styleUrls: ['./arts.component.scss',]
 })
 export class ArtsComponent implements OnInit {
+  @Input() mostrarMensagemDeErro: boolean = false; // Adicione a entrada para mostrar a mensagem de erro
   categoriaSelecionada: Arts | null = null;
   imagens: string[] = [];
 
@@ -17,8 +19,9 @@ export class ArtsComponent implements OnInit {
     private artsService: ArtsService,
     private route: ActivatedRoute,
     private router: Router,
-    private queryParamsService: QueryParamService
-  ) { }
+    private queryParamsService: QueryParamService,
+    private errorMessageService: ErrorMessageService
+  ) {}
 
   ngOnInit(): void {
     this.route.data.subscribe((data) => {
@@ -46,9 +49,13 @@ export class ArtsComponent implements OnInit {
       next: (resposta: string[]) => {
         this.imagens = resposta;
         console.log('Imagens carregadas com sucesso:', categoria, ';', this.imagens);
+        this.errorMessageService.ocultarMensagemDeErro();
       },
       error: (error) => {
         console.error('Erro ao carregar imagens:', categoria, ';', error);
+        this.errorMessageService.mostrarMensagemDeErro();
+        this.mostrarMensagemDeErro = true; // Defina mostrarMensagemDeErro como verdadeiro em caso de erro
+        // Você também pode configurar mostrarMensagemDeErro com base na lógica do seu aplicativo aqui.
       },
     });
   }

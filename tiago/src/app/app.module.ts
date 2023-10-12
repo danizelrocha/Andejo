@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './core/footer/footer.component';
 import { NavComponent } from './core/nav/nav.component';
+import { FooterComponent } from './core/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { GalleryComponent } from './shared/components/gallery/gallery.component';
+import { ArtsComponent } from './pages/arts/arts.component';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { GalleryComponent } from './shared/components/gallery/gallery.component';
+
+import { ArtsService } from './shared/components/service/arts.service';
+import { ErrorMessageService } from './shared/components/service/erro-message.service';
+
+// Importe o novo serviço
 
 @NgModule({
   declarations: [
@@ -15,15 +21,18 @@ import { GalleryComponent } from './shared/components/gallery/gallery.component'
     FooterComponent,
     NavComponent,
     HomeComponent,
-    GalleryComponent
+    GalleryComponent,
+    ArtsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    ArtsService,
+    ErrorMessageService
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}

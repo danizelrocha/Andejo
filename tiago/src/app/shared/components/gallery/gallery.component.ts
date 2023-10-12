@@ -1,8 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ArtsService } from '../service/arts.service';
 import { Arts } from 'src/app/core/enums/Arts.enums';
-import { QueryParamService } from '../service/query-param.service.ts.service';
+import { ArtsService } from '../service/arts.service';
+import { QueryParamService } from '../service/query-param.service';
+import { ErrorMessageService } from '../service/erro-message.service';
 
 @Component({
   selector: 'app-gallery',
@@ -11,13 +12,15 @@ import { QueryParamService } from '../service/query-param.service.ts.service';
 })
 export class GalleryComponent implements OnInit {
   @Input() categoriaSelecionada: Arts | null = null;
+  @Input() mostrarMensagemDeErro: boolean = false; // Adicione a entrada para mostrar a mensagem de erro
   imagens: { url: string, categoria: Arts }[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private artsService: ArtsService,
-    private queryParamsService: QueryParamService
-  ) { }
+    private queryParamsService: QueryParamService,
+    private errorMessageService: ErrorMessageService
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -28,7 +31,7 @@ export class GalleryComponent implements OnInit {
 
       this.carregarImagensPorCategoria(this.categoriaSelecionada);
 
-      // Defina os queryParams no serviço compartilhado
+      // Define os queryParams no serviço compartilhado
       this.queryParamsService.setQueryParams(params);
     });
   }
@@ -37,11 +40,14 @@ export class GalleryComponent implements OnInit {
     if (categoria) {
       this.artsService.getListPorCategoria(categoria).subscribe({
         next: (resposta: { url: string, categoria: Arts }[]) => {
-          this.imagens = resposta.filter(imagem => imagem.categoria === categoria);
+          this.imagens = resposta.filter((imagem) => imagem.categoria === categoria);
           console.log('Imagens carregadas com sucesso:', categoria, this.imagens);
+          this.errorMessageService.ocultarMensagemDeErro();
         },
         error: (error) => {
           console.error('Erro ao carregar imagens:', categoria, error);
+          this.errorMessageService.mostrarMensagemDeErro();
+          this.imagens = [];
         },
       });
     }

@@ -1,9 +1,24 @@
+<!-- Container para as imagens -->
 <div class="gallery-item">
   <div class="container">
     <div class="row">
       <div class="col-md-4" *ngFor="let item of imagens">
-        <img class="img-fluid" [src]="item" alt="Imagem" *ngIf="categoriaSelecionada === item.categoria" />
+        <div class="img-fluid" *ngIf="categoriaSelecionada === item.categoria">
+          <img class="img-fluid" [src]="item.url" alt="Imagem" />
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Card para exibir mensagens de erro -->
+<div class="error-card" *ngIf="mostrarMensagemDeErro">
+  <div class="card">
+    <i class="bi bi-emoji-frown" style="font-size: 48px; color: red;"></i>
+    <div class="card-body">
+      <p class="card-text">Ocorreu um erro ao carregar a imagem. Por favor, tente novamente mais tarde.</p>
+    </div>
+  </div>
+</div>
+
+
