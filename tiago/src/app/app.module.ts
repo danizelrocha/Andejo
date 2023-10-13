@@ -12,8 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ArtsService } from './shared/components/service/arts.service';
 import { ErrorMessageService } from './shared/components/service/erro-message.service';
+import { QueryParamService } from './shared/components/service/query-param.service';
 
-// Importe o novo serviço
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { ErrorMessageService } from './shared/components/service/erro-message.se
   ],
   providers: [
     ArtsService,
-    ErrorMessageService
+    ErrorMessageService,
+    QueryParamService
   ],
   bootstrap: [AppComponent],
 })

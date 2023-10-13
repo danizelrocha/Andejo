@@ -12,7 +12,7 @@ import { ErrorMessageService } from '../service/erro-message.service';
 })
 export class GalleryComponent implements OnInit {
   @Input() categoriaSelecionada: Arts | null = null;
-  @Input() mostrarMensagemDeErro: boolean = false; // Adicione a entrada para mostrar a mensagem de erro
+  @Input() mostrarMensagemDeErro: boolean = false;
   imagens: { url: string, categoria: Arts }[] = [];
 
   constructor(
@@ -31,7 +31,6 @@ export class GalleryComponent implements OnInit {
 
       this.carregarImagensPorCategoria(this.categoriaSelecionada);
 
-      // Define os queryParams no serviço compartilhado
       this.queryParamsService.setQueryParams(params);
     });
   }

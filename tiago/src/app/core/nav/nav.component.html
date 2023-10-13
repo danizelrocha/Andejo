@@ -6,36 +6,38 @@
         style="--bs-scroll-height: 100px"
       >
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home">ANDEJO</a>
+          <a class="nav-link">ANDEJO</a>
         </li>
         <li class="nav-item">
           <i class="bi bi-globe-americas" style="color: white"></i>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/home">Home</a>
+          <a class="nav-link" [routerLink]="['/home']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/arts/destaques">Destaques</a>
+          <a class="nav-link" [routerLink]="['/arts']" [queryParams]="{ categoria: 'destaques' }">Destaques</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/arts/galeria">Galeria</a>
+          <a class="nav-link" [routerLink]="['/arts']" [queryParams]="{ categoria: 'galeria' }">Galeria</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/arts/versoes">Versões</a>
+          <a class="nav-link" [routerLink]="['/arts']" [queryParams]="{ categoria: 'versoes' }">Versões</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/arts/autorais">Autorais</a>
+          <a class="nav-link" [routerLink]="['/arts']" [queryParams]="{ categoria: 'autorais' }">Autorais</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/arts/rascunhos">Rascunhos</a>
+          <a class= "nav-link" [routerLink]="['/arts']" [queryParams]="{ categoria: 'rascunhos' }">Rascunhos</a>
         </li>
       </ul>
-
       <form class="d-flex" role="search">
-        <button type="button" (click)="toggle()" [ngClass]="{ 'dark-theme': isDarkTheme }" title="Clique para alternar o tema">
+        <button
+          type="button"
+          (click)="toggle()"
+        >
           <img
-            [src]="'~/../assets/image/darkLigth/' + icon + '.svg'"
-            alt="Clique e troque {{ textTheme }}"
+            src="~/../assets/image/darkLigth/{{ icon }}.svg"
+            alt="Click e troque {{ textTheme }}"
           />
         </button>
       </form>
