@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ArtsService } from 'src/app/shared/components/service/arts.service';
 import { Arts } from 'src/app/core/enums/Arts.enums';
-import { ErrorMessageService } from 'src/app/shared/components/service/erro-message.service';
+import { ArtsService } from 'src/app/shared/components/service/arts.service';
+import { NotificationService } from 'src/app/shared/components/service/notification.service';
 
 @Component({
   selector: 'app-arts',
@@ -18,7 +18,7 @@ export class ArtsComponent implements OnInit {
     private artsService: ArtsService,
     private route: ActivatedRoute,
     private router: Router,
-    private errorMessageService: ErrorMessageService
+    private notificationService: NotificationService
   ) {}
 
   ngOnInit(): void {
@@ -42,13 +42,11 @@ export class ArtsComponent implements OnInit {
         next: (resposta: string[]) => {
           this.imagens = resposta;
           console.log('Imagens carregadas com sucesso:', categoria, this.imagens);
-          this.mostrarMensagemDeErro = false; // Redefina mostrarMensagemDeErro para falso em caso de sucesso
-          this.errorMessageService.ocultarMensagemDeErro();
+          this.notificationService.clearMessage();
         },
         error: (error) => {
           console.error('Erro ao carregar imagens:', categoria, error);
-          this.errorMessageService.mostrarMensagemDeErro();
-          this.mostrarMensagemDeErro = true; // Defina mostrarMensagemDeErro como verdadeiro em caso de erro
+          this.notificationService.showMessage('Erro ao carregar imagens');
           this.imagens = [];
         },
       });

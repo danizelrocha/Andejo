@@ -1,72 +1,87 @@
 {
-  "Destaques": [
+  "destaques": [
     {
-      "Url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
-      "Categoria": "Destaques"
+      "id": 1,
+      "url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
+      "categoria": "destaques"
     },
     {
-      "Url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
-      "Categoria": "Destaques"
+      "id": 2,
+      "url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-2.jpg",
+      "categoria": "destaques"
     },
     {
-      "Url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
-      "Categoria": "Destaques"
+      "id": 3,
+      "url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-3.jpg",
+      "categoria": "destaques"
     }
   ],
-  "Galeria": [
+  "galeria": [
     {
-      "Url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
-      "Categoria": "Galeria"
+      "id": 4,
+      "url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-4.jpg",
+      "categoria": "galeria"
     },
     {
-      "Url": "https://t.ctcdn.com.br/HfaAfdSP0yElfXWQelkeEQvkgyU=/1000x563/smart/i257652.jpeg",
-      "Categoria": "Galeria"
+      "id": 5,
+      "url": "https://t.ctcdn.com.br/HfaAfdSP0yElfXWQelkeEQvkgyU=/1000x563/smart/i257652-1.jpeg",
+      "categoria": "galeria"
     },
     {
-      "Url": "https://t.ctcdn.com.br/HfaAfdSP0yElfXWQelkeEQvkgyU=/1000x563/smart/i257652.jpeg",
-      "Categoria": "Galeria"
+      "id": 6,
+      "url": "https://t.ctcdn.com.br/HfaAfdSP0yElfXWQelkeEQvkgyU=/1000x563/smart/i257652-2.jpeg",
+      "categoria": "galeria"
     }
   ],
-  "Versoes": [
+  "versoes": [
     {
-      "Url": "https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80.jpg.webp",
-      "Categoria": "Versoes"
+      "id": 7,
+      "url": "https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80-1.jpg.webp",
+      "categoria": "versoes"
     },
     {
-      "Url": "https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80.jpg.webp",
-      "Categoria": "Versoes"
+      "id": 8,
+      "url": "https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80-2.jpg.webp",
+      "categoria": "versoes"
     },
     {
-      "Url": "https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80.jpg.webp",
-      "Categoria": "Versoes"
+      "id": 9,
+      "url": "https://cdn.mos.cms.futurecdn.net/CnH7VLb48BCFzaePFkX6Nh-970-80-3.jpg.webp",
+      "categoria": "versoes"
     }
   ],
-  "Autorais": [
+  "autorais": [
     {
-      "Url": "https://scontent.fssz2-1.fna.fbcdn.net/v/t1.6435-9/130787571_220298269466653_3804401160185387305_n.jpg?stp=dst-jpg_p526x395&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hrx6mfD5G1cAX9LmlJA&_nc_ht=scontent.fssz2-1.fna&oh=00_AfDwtwW4ZvDgRfyvO1gf1XPPxa_uyJfsX2LJ5IM4Ym2R6g&oe=654117F5",
-      "Categoria": "Autorais"
+      "id": 10,
+      "url": "URL_DA_PRIMEIRA_IMAGEM_AUTORAIS",
+      "categoria": "autorais"
     },
     {
-      "Url": "https://scontent.fssz2-1.fna.fbcdn.net/v/t1.6435-9/130787571_220298269466653_3804401160185387305_n.jpg?stp=dst-jpg_p526x395&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hrx6mfD5G1cAX9LmlJA&_nc_ht=scontent.fssz2-1.fna&oh=00_AfDwtwW4ZvDgRfyvO1gf1XPPxa_uyJfsX2LJ5IM4Ym2R6g&oe=654117F5",
-      "Categoria": "Autorais"
+      "id": 11,
+      "url": "URL_DA_SEGUNDA_IMAGEM_AUTORAIS",
+      "categoria": "autorais"
     },
     {
-      "Url": "https://scontent.fssz2-1.fna.fbcdn.net/v/t1.6435-9/130787571_220298269466653_3804401160185387305_n.jpg?stp=dst-jpg_p526x395&_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=Hrx6mfD5G1cAX9LmlJA&_nc_ht=scontent.fssz2-1.fna&oh=00_AfDwtwW4ZvDgRfyvO1gf1XPPxa_uyJfsX2LJ5IM4Ym2R6g&oe=654117F5",
-      "Categoria": "Autorais"
+      "id": 12,
+      "url": "URL_DA_TERCEIRA_IMAGEM_AUTORAIS",
+      "categoria": "autorais"
     }
   ],
-  "Rascunho": [
+  "rascunho": [
     {
-      "Url": "https://ogimg.infoglobo.com.br/in/24734401-b0f-624/FT1086A/MAIN.jpg",
-      "Categoria": "Rascunho"
+      "id": 13,
+      "url": "URL_DA_PRIMEIRA_IMAGEM_RASCUNHO",
+      "categoria": "rascunho"
     },
     {
-      "Url": "https://ogimg.infoglobo.com.br/in/24734401-b0f-624/FT1086A/MAIN.jpg",
-      "Categoria": "Rascunho"
+      "id": 14,
+      "url": "URL_DA_SEGUNDA_IMAGEM_RASCUNHO",
+      "categoria": "rascunho"
     },
     {
-      "Url": "https://ogimg.infoglobo.com.br/in/24734401-b0f-624/FT1086A/MAIN.jpg",
-      "Categoria": "Rascunho"
+      "id": 15,
+      "url": "URL_DA_TERCEIRA_IMAGEM_RASCUNHO",
+      "categoria": "rascunho"
     }
   ]
 }

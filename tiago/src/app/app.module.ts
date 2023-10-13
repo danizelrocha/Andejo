@@ -10,16 +10,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { ArtsService } from './shared/components/service/arts.service';
-import { ErrorMessageService } from './shared/components/service/erro-message.service';
+import { NotificationService } from './shared/components/service/notification.service';
 import { QueryParamService } from './shared/components/service/query-param.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     NavComponent,
+    FooterComponent,
     HomeComponent,
     GalleryComponent,
     ArtsComponent
@@ -31,7 +32,7 @@ import { QueryParamService } from './shared/components/service/query-param.servi
   ],
   providers: [
     ArtsService,
-    ErrorMessageService,
+    NotificationService,
     QueryParamService
   ],
   bootstrap: [AppComponent],

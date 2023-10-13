@@ -1,8 +1,8 @@
 export enum Arts {
-  Destaques = 'Destaques',
-  Galeria = 'Galeria',
-  Versoes = 'Versoes',
-  Autorais = 'Autorais',
-  Rascunhos = 'Rascunhos',
+  DESTAQUES = 1,
+  GALERIA = 2,
+  VERSOES = 3,
+  AUTORAIS = 4,
+  RASCUNHO = 5,
 }
 
