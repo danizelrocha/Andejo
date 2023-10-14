@@ -11,7 +11,7 @@ export class NavComponent implements OnInit {
   public icon: string = ETheme.ICON_MOON;
   public textTheme: string = ETheme.TEXT_MOON;
 
-  categoria: string | null = null; // Inicialize como null, já que a categoria ainda não foi selecionada
+  categoria: string | null = null; // Inicia como null, já que a categoria ainda não foi selecionada
 
   constructor(private router: Router,) { }
 

@@ -16,16 +16,11 @@ export class ArtsService {
 
   getListPorCategoria(categoria: Arts): Observable<any[]> {
     const categoriaString = this.getCategoriaString(categoria);
-
-    if (categoriaString === 'Desconhecido') {
-      return this.handleError('Categoria não encontrada.');
-    }
-
     const url = `${this.baseUrl}${categoriaString}`;
 
     return this.http.get<any[]>(url).pipe(
       map((response) => this.processResponse(response, categoria)),
-      catchError((error) => this.handleError('Erro ao carregar imagens.'))
+      catchError((error) => this.handleError(error))
     );
   }
 
@@ -47,12 +42,21 @@ export class ArtsService {
   }
 
   private processResponse(response: any[], categoria: Arts): any[] {
-    // Realize aqui qualquer processamento específico da resposta, como filtragem por categoria.
+    // Realiza  qualquer processamento específico da resposta, como filtragem por categoria.
     return response.filter((imagem) => imagem.categoria === categoria);
   }
 
-  private handleError(errorMessage: string): Observable<never> {
+  private handleError(error: any): Observable<never> {
+    let errorMessage: string;
+
+    if (error instanceof Error) {
+      errorMessage = `Erro: ${error.message}`;
+    } else {
+      errorMessage = 'Erro desconhecido ao carregar imagens.';
+    }
+
     this.notificationService.showMessage(errorMessage);
+
     return new Observable<never>((observer) => {
       observer.error(errorMessage);
     });

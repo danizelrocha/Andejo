@@ -7,10 +7,9 @@ import { NotificationService } from 'src/app/shared/components/service/notificat
 @Component({
   selector: 'app-arts',
   templateUrl: './arts.component.html',
-  styleUrls: ['./arts.component.scss'],
+  styleUrls: ['./arts.component.scss']
 })
 export class ArtsComponent implements OnInit {
-  mostrarMensagemDeErro: boolean = false;
   categoriaSelecionada: Arts | null = null;
   imagens: string[] = [];
 
@@ -38,18 +37,17 @@ export class ArtsComponent implements OnInit {
 
   private carregarImagensPorCategoria(categoria: Arts | null) {
     if (categoria) {
-      this.artsService.getListPorCategoria(categoria).subscribe({
-        next: (resposta: string[]) => {
+      this.artsService.getListPorCategoria(categoria).subscribe(    // arumar o subscribe implementando next
+        (resposta: string[]) => {
           this.imagens = resposta;
-          console.log('Imagens carregadas com sucesso:', categoria, this.imagens);
           this.notificationService.clearMessage();
         },
-        error: (error) => {
+        (error) => {
           console.error('Erro ao carregar imagens:', categoria, error);
           this.notificationService.showMessage('Erro ao carregar imagens');
           this.imagens = [];
-        },
-      });
+        }
+      );
     }
   }
 }

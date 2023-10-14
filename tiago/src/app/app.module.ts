@@ -1,3 +1,6 @@
+
+// inchado criar mais modulos tá feio
+
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavComponent } from './core/nav/nav.component';
@@ -14,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ArtsService } from './shared/components/service/arts.service';
 import { NotificationService } from './shared/components/service/notification.service';
 import { QueryParamService } from './shared/components/service/query-param.service';
+
 
 
 @NgModule({
