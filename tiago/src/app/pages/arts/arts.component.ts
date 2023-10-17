@@ -37,17 +37,17 @@ export class ArtsComponent implements OnInit {
 
   private carregarImagensPorCategoria(categoria: Arts | null) {
     if (categoria) {
-      this.artsService.getListPorCategoria(categoria).subscribe(    // arumar o subscribe implementando next
-        (resposta: string[]) => {
+      this.artsService.getListPorCategoria(categoria).subscribe({
+        next: (resposta: string[]) => {
           this.imagens = resposta;
           this.notificationService.clearMessage();
         },
-        (error) => {
+        error: (error) => {
           console.error('Erro ao carregar imagens:', categoria, error);
           this.notificationService.showMessage('Erro ao carregar imagens');
           this.imagens = [];
         }
-      );
+      });
     }
   }
 }

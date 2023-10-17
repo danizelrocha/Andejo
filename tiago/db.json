@@ -53,34 +53,34 @@
   "autorais": [
     {
       "id": 10,
-      "url": "URL_DA_PRIMEIRA_IMAGEM_AUTORAIS",
+      "url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
       "categoria": "autorais"
     },
     {
       "id": 11,
-      "url": "URL_DA_SEGUNDA_IMAGEM_AUTORAIS",
+      "url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
       "categoria": "autorais"
     },
     {
       "id": 12,
-      "url": "URL_DA_TERCEIRA_IMAGEM_AUTORAIS",
+      "url": "https://projetocolabora.com.br/wp-content/uploads/2018/07/Akira-1.jpg",
       "categoria": "autorais"
     }
   ],
   "rascunho": [
     {
       "id": 13,
-      "url": "URL_DA_PRIMEIRA_IMAGEM_RASCUNHO",
+      "url": "./src/assets/image/rascunho/11.jpg",
       "categoria": "rascunho"
     },
     {
       "id": 14,
-      "url": "URL_DA_SEGUNDA_IMAGEM_RASCUNHO",
+      "url": "./src/assets/image/rascunho/12.jpg",
       "categoria": "rascunho"
     },
     {
       "id": 15,
-      "url": "URL_DA_TERCEIRA_IMAGEM_RASCUNHO",
+      "url": "./src/assets/image/rascunho/13.jpg",
       "categoria": "rascunho"
     }
   ]
