@@ -43,6 +43,7 @@ export class ArtsService {
 
   private processResponse(response: any[], categoria: Arts): any[] {
     // Realiza  qualquer processamento específico da resposta, como filtragem por categoria.
+    //console.log(response)
     return response.filter((imagem) => imagem.categoria === categoria);
   }
 

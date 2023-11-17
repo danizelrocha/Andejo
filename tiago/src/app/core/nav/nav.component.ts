@@ -18,8 +18,10 @@ export class NavComponent implements OnInit {
   ngOnInit(): void { }
 
   public toggle() {
-    const theme = document.body.classList.toggle('dark-theme');
+  return this.changeTheme(document.body.classList.toggle('dark-theme')) //analisar para estudo melhoria do Ricardo
+  }
 
+  public changeTheme(theme: any) {
     if (theme) {
       this.textTheme = ETheme.TEXT_SUN;
       return (this.icon = ETheme.ICON_SUN);
@@ -27,6 +29,7 @@ export class NavComponent implements OnInit {
 
     this.textTheme = ETheme.TEXT_MOON;
     return (this.icon = ETheme.ICON_MOON);
+
   }
 
   // Função para navegar para uma categoria específica
